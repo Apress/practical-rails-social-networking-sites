@@ -1,0 +1,18 @@
+<h2>User: <%= @user.username %></h2>
+
+<p>Member since <%= @user.created_at.to_s(:long) %></p>
+<p><%= @user.profile %></p>
+
+<h3>Blog Entries</h3>
+<ul id="entries">
+  <% for entry in @entries %>
+    <li>
+      <%= link_to entry.title, 
+                  entry_path(:user_id => @user, :id => entry) %>
+    </li>
+  <% end %>
+</ul>
+<p>
+  <%= link_to "See all of #{@user.username}'s blog", 
+              entries_path(:user_id => @user) %>
+</p>

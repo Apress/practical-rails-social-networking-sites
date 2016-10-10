@@ -1,0 +1,6 @@
+admin:
+  id: 1
+  name: Administrator
+editor:
+  id: 2
+  name: Editor

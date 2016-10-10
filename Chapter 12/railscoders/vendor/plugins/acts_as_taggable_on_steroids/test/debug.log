@@ -1,0 +1,630 @@
+# Logfile created on Mon Feb 12 11:12:51 +0000 2007 by logger.rb/1.5.2.9
+  [4;36;1mSQL (0.000155)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'tags': DROP TABLE tags[0m
+  [4;36;1mSQL (0.510336)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'taggings': DROP TABLE taggings[0m
+  [4;36;1mSQL (0.008991)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'users': DROP TABLE users[0m
+  [4;36;1mSQL (0.002448)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'posts': DROP TABLE posts[0m
+  [4;36;1mSQL (0.003605)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'photos': DROP TABLE photos[0m
+  [4;36;1mSQL (0.044036)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.002235)[0m   [0mCREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000921)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.001618)[0m   [0mSHOW FIELDS FROM schema_info[0m
+  [4;36;1mSQL (0.001519)[0m   [0;1mUPDATE schema_info SET version = 0[0m
+  [4;36;1mSQL (0.000138)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.022817)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.002351)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.040016)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.007211)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001567)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.002815)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001510)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003894)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001529)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.003120)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.002080)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.001008)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mSQL (0.000178)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.001654)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.313807)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001995)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.002584)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001805)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.002773)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.003579)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003700)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001878)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.002152)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.003093)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.001044)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.024417)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.002329)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.000679)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.001612)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.001426)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.000652)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000306)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000279)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.001933)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.001967)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.000201)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.002573)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.029026)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001596)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.003011)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001799)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.002255)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001816)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003554)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001621)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.002484)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.001904)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000381)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.000743)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.001492)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.000441)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.001725)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.000394)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.000423)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000332)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000307)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.002085)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.002391)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.059505)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.002764)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001673)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.014309)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001523)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.004750)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001787)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.008485)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001645)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.008108)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.001765)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000636)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.000751)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.001441)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.000601)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.001200)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.000984)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.000433)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000342)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000337)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.001514)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.002526)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.000164)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.002261)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.002764)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001887)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.026218)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001704)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.002825)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001744)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003524)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001683)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.002884)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.001955)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.001885)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.000733)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.001378)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.000379)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.001294)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.000283)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.000343)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000264)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000268)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.001678)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.001650)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.002262)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.003068)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.002055)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.002665)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001690)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.003029)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001724)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003738)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.002207)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.002507)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.001713)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000498)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.000839)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.001581)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.000542)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.001967)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.000424)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.000404)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000408)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000319)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.001904)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.001633)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.000160)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.002827)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.031663)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001548)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.002434)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.002027)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.002369)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001964)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003548)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001684)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.002485)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.001870)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000249)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.000747)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.001563)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.000548)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.001766)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.000397)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.000420)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000343)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000306)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.002008)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.002131)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.001871)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.049966)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001982)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.002916)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001684)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.002399)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.002334)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003413)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001954)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.002921)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.001929)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000805)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.000741)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.001628)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.000838)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.001459)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.000600)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.000413)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000330)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000305)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.001892)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.001770)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.002291)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.002128)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001992)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.002966)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001911)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.002769)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001607)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003134)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001647)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.003122)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.001972)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000341)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.000739)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.001590)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.001837)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.001857)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.000440)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.000386)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000381)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000323)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.001589)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.002433)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.002472)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.002778)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.021748)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.002569)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001781)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.003027)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001587)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003591)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001629)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.002742)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.001832)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000620)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.000724)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.001505)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.000576)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.001518)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.000365)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.000490)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000336)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000318)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.001762)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.001775)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.002697)[0m   [0mDROP TABLE tags[0m
+  [4;36;1mSQL (0.041148)[0m   [0;1mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.005670)[0m   [0mDROP TABLE taggings[0m
+  [4;36;1mSQL (0.002771)[0m   [0;1mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.002195)[0m   [0mDROP TABLE users[0m
+  [4;36;1mSQL (0.002327)[0m   [0;1mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001666)[0m   [0mDROP TABLE posts[0m
+  [4;36;1mSQL (0.003507)[0m   [0;1mCREATE TABLE posts (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text` text DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001597)[0m   [0mDROP TABLE photos[0m
+  [4;36;1mSQL (0.002383)[0m   [0;1mCREATE TABLE photos (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.001938)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.000630)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mTag Load (0.000748)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;35;1mPost Load (0.001845)[0m   [0mSELECT DISTINCT posts.* FROM posts LEFT OUTER JOIN taggings ON taggings.taggable_id = posts.id AND taggings.taggable_type = 'Post' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('ABCDEFG')) [0m
+  [4;36;1mPhoto Load (0.000745)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('HIJKLM')) [0m
+  [4;35;1mTag Columns (0.002160)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mPhoto Load (0.001960)[0m   [0;1mSELECT DISTINCT photos.* FROM photos LEFT OUTER JOIN taggings ON taggings.taggable_id = photos.id AND taggings.taggable_type = 'Photo' LEFT OUTER JOIN tags ON tags.id = taggings.tag_id WHERE (tags.name IN ('unsaved tag')) [0m
+  [4;35;1mTag Load (0.006200)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join posts on posts.id = taggings.taggable_id
+ where taggings.taggable_type = "Post"
+ and taggings.created_at >= '2006-08-04'
+ group by tags.id
+ having count(*) > 0 
+ 
+ 
+[0m
+  [4;36;1mTag Load (0.000424)[0m   [0;1m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 and count >= 2
+ 
+ 
+[0m
+  [4;35;1mTag Load (0.000241)[0m   [0m select tags.id, tags.name, count(*) as count
+ from tags left outer join taggings on tags.id = taggings.tag_id
+ left outer join photos on photos.id = taggings.taggable_id
+ where taggings.taggable_type = "Photo"
+ 
+ group by tags.id
+ having count(*) > 0 
+ 
+ limit 2
+[0m
+  [4;36;1mPost Columns (0.001498)[0m   [0;1mSHOW FIELDS FROM posts[0m
+  [4;35;1mTagging Columns (0.002072)[0m   [0mSHOW FIELDS FROM taggings[0m
